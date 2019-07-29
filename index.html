@@ -253,6 +253,301 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/Markdown插入表格/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/29/Markdown插入表格/" itemprop="url">Markdown插入表格</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T19:43:05+08:00">
+                2019-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/localhost和0-0-0-0区别？/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/29/localhost和0-0-0-0区别？/" itemprop="url">localhost、127.0.0.1和0.0.0.0</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T19:15:51+08:00">
+                2019-07-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">localhost</th>
+<th style="text-align:center">127.0.0.1</th>
+<th style="text-align:center">本机IP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>网络</td>
+<td style="text-align:center">short content</td>
+<td style="text-align:center">不联网</td>
+<td style="text-align:center">联网</td>
+</tr>
+<tr>
+<td>传输</td>
+<td style="text-align:center">不使用网卡，不受防火墙和网卡限制</td>
+<td style="text-align:center">网卡传输，受防火墙和网卡限制</td>
+<td style="text-align:center">网卡传输，受防火墙和网卡限制</td>
+</tr>
+<tr>
+<td>访问</td>
+<td style="text-align:center">本机访问</td>
+<td style="text-align:center">本机访问</td>
+<td style="text-align:center">本机或外部访问</td>
+</tr>
+</tbody>
+</table>
+<p>1、localhost，域名，可以被配制成任意ip地址，通常情况下指向127.0.0.1（ipv4，通过本机host文件，将localhost自动解析为127.0.0.1，可修改）和[::1]（ipv6）；</p>
+<p>2、127.0.0.1，127.0.0.1:8整个都是环回地址，通常分配给loopback接口，用来测试本机的TCP/IP协议栈，发往这段A类地址数据包不会出网卡，网络设备不会对其做路由，linux系统中此接口名称为lo；</p>
+<p>3、Any（0.0.0.0）地址被称为通配地址，使用此IP地址可以建立的服务器，IP为本地主机上所有的IP地址；</p>
+<p>如果一个主机有两个IP地址：192.168.1.1和10.1.2.1，若该主机上的一个服务监听地址为0.0.0.0，则通过两个ip都能访问该服务；</p>
+<p>4、本机IP，本机有三块网卡，一块网卡叫做loopback（虚拟网卡），一块叫做ethernet（有线网卡），另一块叫做wlan（无线网卡）。本机IP就是真实网卡的IP，具体来说有线无线各一个，127.0.0.1对应looback虚拟网卡。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/06/zhp/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -533,12 +828,21 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
             
 
             
@@ -546,7 +850,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
