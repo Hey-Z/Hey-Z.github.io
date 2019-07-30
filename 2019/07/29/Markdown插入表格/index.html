@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Hey Blog">
 <meta property="og:description" content="1、使用Markdown编辑器，Typora上方菜单栏—&amp;gt;段落—&amp;gt;表格； 2、代码 12341|title                  |long title  				     |title                  |2|-----------------------|-------------------------|-----------------------|">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T12:44:01.416Z">
+<meta property="og:updated_time" content="2019-07-30T12:35:04.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Markdown插入表格">
 <meta name="twitter:description" content="1、使用Markdown编辑器，Typora上方菜单栏—&amp;gt;段落—&amp;gt;表格； 2、代码 12341|title                  |long title  				     |title                  |2|-----------------------|-------------------------|-----------------------|">
@@ -324,7 +324,28 @@
 <p>2、代码</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1|title                  |long title  				     |title                  |</span><br><span class="line">2|-----------------------|-------------------------|-----------------------|</span><br><span class="line">3|short content          |short content        	      |a long piece of content|</span><br><span class="line">4|a long piece of content|short content|short content          |</span><br></pre></td></tr></table></figure>
 <p>通过|和-组合分隔表格单元；空格和-不影响输出效果，-至少有一个即可；</p>
-<p>在对齐方式上，默认标题居中对齐，内容居左对齐，</p>
+<p>在对齐方式上，默认标题居中对齐，内容居左对齐，通过：可以调整表格列的对齐方式：<code>:-</code> 为左对齐，<code>:-:</code> 为居中对齐、<code>-:</code> 为右对齐。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">title</th>
+<th style="text-align:center">long title</th>
+<th style="text-align:right">title</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">short content</td>
+<td style="text-align:center">short content</td>
+<td style="text-align:right">a long piece of content</td>
+</tr>
+<tr>
+<td style="text-align:left">a long piece of content</td>
+<td style="text-align:center">short content</td>
+<td style="text-align:right">short content</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -358,6 +379,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/30/微信小程序开发-1/" rel="prev" title="微信小程序开发-1<入门>">
+                微信小程序开发-1<入门> <i class="fa fa-chevron-right"></i>
+              </入门></a>
             
           </div>
         </div>
@@ -427,7 +452,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -438,7 +463,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -449,7 +474,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
