@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="IP,">
+  <meta name="keywords" content="shell命令,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="localhost 127.0.0.1 本机IP     网络 不联网 不联网 联网   传输 不使用网卡，不受防火墙和网卡限制 网卡传输，受防火墙和网卡限制 网卡传输，受防火墙和网卡限制   访问 本机访问 本机访问 本机或外部访问    1、localhost，域名，可以被配制成任意ip地址，通常情况下指向127.0.0.1（ipv4，通过本机host文件，将localhost自动解析">
-<meta name="keywords" content="IP">
+<meta name="description" content="摘自《菜鸟教程》–https://www.runoob.com/linux/linux-shell.html 一、echo Shell 的 echo 指令用于字符串的输出。命令格式： 123456789101112131415161718192021222324echo string# 1、显示普通字符串echo &quot;It is a test&quot;# 双引号完全可以省略echo It is a test">
+<meta name="keywords" content="shell命令">
 <meta property="og:type" content="article">
-<meta property="og:title" content="localhost、127.0.0.1和0.0.0.0">
-<meta property="og:url" content="http://yoursite.com/2019/07/29/localhost和0-0-0-0区别？/index.html">
+<meta property="og:title" content="Shell脚本编程3">
+<meta property="og:url" content="http://yoursite.com/2019/08/13/Shell脚本编程3/index.html">
 <meta property="og:site_name" content="Hey Blog">
-<meta property="og:description" content="localhost 127.0.0.1 本机IP     网络 不联网 不联网 联网   传输 不使用网卡，不受防火墙和网卡限制 网卡传输，受防火墙和网卡限制 网卡传输，受防火墙和网卡限制   访问 本机访问 本机访问 本机或外部访问    1、localhost，域名，可以被配制成任意ip地址，通常情况下指向127.0.0.1（ipv4，通过本机host文件，将localhost自动解析">
+<meta property="og:description" content="摘自《菜鸟教程》–https://www.runoob.com/linux/linux-shell.html 一、echo Shell 的 echo 指令用于字符串的输出。命令格式： 123456789101112131415161718192021222324echo string# 1、显示普通字符串echo &quot;It is a test&quot;# 双引号完全可以省略echo It is a test">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-29T13:10:20.285Z">
+<meta property="og:updated_time" content="2019-08-13T14:31:58.408Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="localhost、127.0.0.1和0.0.0.0">
-<meta name="twitter:description" content="localhost 127.0.0.1 本机IP     网络 不联网 不联网 联网   传输 不使用网卡，不受防火墙和网卡限制 网卡传输，受防火墙和网卡限制 网卡传输，受防火墙和网卡限制   访问 本机访问 本机访问 本机或外部访问    1、localhost，域名，可以被配制成任意ip地址，通常情况下指向127.0.0.1（ipv4，通过本机host文件，将localhost自动解析">
+<meta name="twitter:title" content="Shell脚本编程3">
+<meta name="twitter:description" content="摘自《菜鸟教程》–https://www.runoob.com/linux/linux-shell.html 一、echo Shell 的 echo 指令用于字符串的输出。命令格式： 123456789101112131415161718192021222324echo string# 1、显示普通字符串echo &quot;It is a test&quot;# 双引号完全可以省略echo It is a test">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/07/29/localhost和0-0-0-0区别？/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/13/Shell脚本编程3/">
 
 
 
 
 
-  <title>localhost、127.0.0.1和0.0.0.0 | Hey Blog</title>
+  <title>Shell脚本编程3 | Hey Blog</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/29/localhost和0-0-0-0区别？/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/13/Shell脚本编程3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Hey Z">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">localhost、127.0.0.1和0.0.0.0</h1>
+          <h1 class="post-title" itemprop="name headline">Shell脚本编程3</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-29T19:15:51+08:00">
-                2019-07-29
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-13T21:37:17+08:00">
+                2019-08-13
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/HTTP/" itemprop="url" rel="index">
-                    <span itemprop="name">HTTP</span>
+                  <a href="/categories/Shell编程/" itemprop="url" rel="index">
+                    <span itemprop="name">Shell编程</span>
                   </a>
                 </span>
 
@@ -342,41 +342,128 @@
       
 
       
-        <table>
+        <p>摘自《菜鸟教程》–<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-shell.html</a></p>
+<p>一、echo</p>
+<p>Shell 的 echo 指令用于字符串的输出。命令格式：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">echo string</span><br><span class="line"><span class="meta">#</span> 1、显示普通字符串</span><br><span class="line">echo "It is a test"</span><br><span class="line"><span class="meta">#</span> 双引号完全可以省略</span><br><span class="line">echo It is a test</span><br><span class="line"><span class="meta">#</span> 2、显示转义字符，双引号也可以省略</span><br><span class="line">echo "\"It is a test\""</span><br><span class="line"><span class="meta">#</span> 3、显示变量</span><br><span class="line"><span class="meta">#</span> read 命令从标准输入中读取一行,并把输入行的每个字段的值指定给 shell 变量</span><br><span class="line">read name </span><br><span class="line">echo "$name It is a test"</span><br><span class="line"><span class="meta">#</span> 4、显示换行</span><br><span class="line">echo -e "OK! \n" # -e 开启转义</span><br><span class="line">echo "It is a test"</span><br><span class="line"><span class="meta">#</span> 5、显示不换行</span><br><span class="line"><span class="meta">#</span>!/bin/sh</span><br><span class="line">echo -e "OK! \c" # -e 开启转义 \c 不换行</span><br><span class="line">echo "It is a test" --&gt; OK! It is a test</span><br><span class="line"><span class="meta">#</span> 6、显示结果定向至文件</span><br><span class="line">echo "It is a test" &gt; myfile</span><br><span class="line"><span class="meta">#</span> 7、原样输出字符串，不进行转义或取变量（用单引号）</span><br><span class="line">echo '$name\"' --&gt; $name\"</span><br><span class="line"><span class="meta">#</span> 8、显示命令执行结果</span><br><span class="line">echo `date` --&gt; Tue Aug 13 13:45:40 UTC 2019</span><br></pre></td></tr></table></figure>
+<p>二、printf</p>
+<p>使用 printf 的脚本比使用 echo 移植性好。默认 printf 不会像 echo 自动添加换行符，我们可以手动添加 \n。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf  format-string(格式控制字符串)  [arguments...](参数列表)</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> echo "Hello, Shell"</span><br><span class="line">Hello, Shell</span><br><span class="line"><span class="meta">$</span> printf "Hello, Shell\n"</span><br><span class="line">Hello, Shell</span><br><span class="line"><span class="meta">$</span></span><br></pre></td></tr></table></figure>
+<p>printf 使用引用文本或空格分隔的参数，外面可以在 printf 中使用格式化字符串，还可以制定字符串的宽度、左右对齐方式等。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>!/bin/bash</span><br><span class="line"> </span><br><span class="line">printf "%-10s %-8s %-4s\n" 姓名 性别 体重kg  </span><br><span class="line">printf "%-10s %-8s %-4.2f\n" 郭靖 男 66.1234 </span><br><span class="line">printf "%-10s %-8s %-4.2f\n" 杨过 男 48.6543 </span><br><span class="line">printf "%-10s %-8s %-4.2f\n" 郭芙 女 47.9876</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">姓名     性别   体重kg</span><br><span class="line">郭靖     男      66.12</span><br><span class="line">杨过     男      48.65</span><br><span class="line">郭芙     女      47.99</span><br></pre></td></tr></table></figure>
+<p>三、test</p>
+<p>Shell中的 test 命令用于检查某个条件是否成立，它可以进行数值、字符和文件三个方面的测试。</p>
+<p>1、数值测试</p>
+<table>
 <thead>
 <tr>
-<th></th>
-<th style="text-align:center">localhost</th>
-<th style="text-align:center">127.0.0.1</th>
-<th style="text-align:center">本机IP</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>网络</td>
-<td style="text-align:center">不联网</td>
-<td style="text-align:center">不联网</td>
-<td style="text-align:center">联网</td>
+<td style="text-align:left">-eq</td>
+<td style="text-align:left">等于则为真</td>
 </tr>
 <tr>
-<td>传输</td>
-<td style="text-align:center">不使用网卡，不受防火墙和网卡限制</td>
-<td style="text-align:center">网卡传输，受防火墙和网卡限制</td>
-<td style="text-align:center">网卡传输，受防火墙和网卡限制</td>
+<td style="text-align:left">-ne</td>
+<td style="text-align:left">不等于则为真</td>
 </tr>
 <tr>
-<td>访问</td>
-<td style="text-align:center">本机访问</td>
-<td style="text-align:center">本机访问</td>
-<td style="text-align:center">本机或外部访问</td>
+<td style="text-align:left">-gt</td>
+<td style="text-align:left">大于则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-ge</td>
+<td style="text-align:left">大于等于则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-lt</td>
+<td style="text-align:left">小于则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-le</td>
+<td style="text-align:left">小于等于则为真</td>
 </tr>
 </tbody>
 </table>
-<p>1、localhost，域名，可以被配制成任意ip地址，通常情况下指向127.0.0.1（ipv4，通过本机host文件，将localhost自动解析为127.0.0.1，可修改）和[::1]（ipv6）；</p>
-<p>2、127.0.0.1，127.0.0.1:8整个都是环回地址，通常分配给loopback接口，用来测试本机的TCP/IP协议栈，发往这段A类地址数据包不会出网卡，网络设备不会对其做路由，linux系统中此接口名称为lo；</p>
-<p>3、Any（0.0.0.0）地址被称为通配地址，使用此IP地址可以建立的服务器，IP为本地主机上所有的IP地址；</p>
-<p>如果一个主机有两个IP地址：192.168.1.1和10.1.2.1，若该主机上的一个服务监听地址为0.0.0.0，则通过两个ip都能访问该服务；</p>
-<p>4、本机IP，本机有三块网卡，一块网卡叫做loopback（虚拟网卡），一块叫做ethernet（有线网卡），另一块叫做wlan（无线网卡）。本机IP就是真实网卡的IP，具体来说有线无线各一个，127.0.0.1对应looback虚拟网卡。</p>
+<p>2、字符串测试</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">=</td>
+<td style="text-align:left">等于则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">!=</td>
+<td style="text-align:left">不相等则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-z 字符串</td>
+<td style="text-align:left">字符串的长度为零则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-n 字符串</td>
+<td style="text-align:left">字符串的长度不为零则为真</td>
+</tr>
+</tbody>
+</table>
+<p>3、文件测试</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-e 文件名</td>
+<td style="text-align:left">如果文件存在则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-r 文件名</td>
+<td style="text-align:left">如果文件存在且可读则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-w 文件名</td>
+<td style="text-align:left">如果文件存在且可写则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-x 文件名</td>
+<td style="text-align:left">如果文件存在且可执行则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-s 文件名</td>
+<td style="text-align:left">如果文件存在且至少有一个字符则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-d 文件名</td>
+<td style="text-align:left">如果文件存在且为目录则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-f 文件名</td>
+<td style="text-align:left">如果文件存在且为普通文件则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-c 文件名</td>
+<td style="text-align:left">如果文件存在且为字符型特殊文件则为真</td>
+</tr>
+<tr>
+<td style="text-align:left">-b 文件名</td>
+<td style="text-align:left">如果文件存在且为块特殊文件则为真</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -394,7 +481,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/IP/" rel="tag"># IP</a>
+            <a href="/tags/shell命令/" rel="tag"># shell命令</a>
           
         </div>
       
@@ -407,8 +494,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/05/06/zhp/" rel="next" title="zhp">
-                <i class="fa fa-chevron-left"></i> zhp
+              <a href="/2019/08/13/Shell脚本编程2/" rel="next" title="Shell脚本编程2">
+                <i class="fa fa-chevron-left"></i> Shell脚本编程2
               </a>
             
           </div>
@@ -417,8 +504,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/07/29/Markdown插入表格/" rel="prev" title="Markdown插入表格">
-                Markdown插入表格 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/13/Shell脚本编程4/" rel="prev" title="Shell脚本编程4">
+                Shell脚本编程4 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
