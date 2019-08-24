@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Makefile入门1 | Hey Blog</title>
+    <meta name="author" content="Hey Z">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content="Life Study Work">
+    <meta name="description" content="Makefile简介转自《跟我一起写Makefile》https://seisman.github.io/how-to-write-makefile/index.html一、前言Makefile是和make（解释makefile中指令的工具）命令一起配合使用的，关系到整个工程的编译规则。Makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译等等。源文件—(编译compile)–&amp;gt;中间目标文件object file（.obj/Wi...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Hey Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Hey Blog</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/back-end">
+                <span class="nav-text">后端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/algorithm">
+                <span class="nav-text">算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Makefile简介"><span class="toc-number">1.</span> <span class="toc-text">Makefile简介</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Makefile入门1
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/08/20/Makefile入门1/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-20T02:17:56.000Z" itemprop="datePublished">2019-08-20</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="Makefile简介"><a href="#Makefile简介" class="headerlink" title="Makefile简介"></a><strong>Makefile简介</strong></h1><p>转自《跟我一起写Makefile》</p>
+<p><a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
+<p>一、前言</p>
+<p>Makefile是和make（解释makefile中指令的工具）命令一起配合使用的，关系到整个工程的编译规则。Makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译等等。</p>
+<p>源文件—(编译compile)–&gt;中间目标文件object file（.obj/Windows，.o/UNIX）—(链接link)–&gt;执行文件。</p>
+<p>编译时，编译器只检测程序语法，函数和变量是否被声明；需要告诉编译器头文件的所在位置（头文件中只声明，定义放在c/c++文件中），只要语法正确就可以编译出中间目标文件。通常，每个源文件对应一个中间目标文件（.o/.obj）。</p>
+<p>链接时，主要是链接函数和全局变量；链接器会在所有的object file中找寻函数实现，（需要指定函数的object file）；通常给中间目标文件打包（库文件Library File(.lib/Windows)，Archive File(.a/UNIX)）</p>
+<p>二、Makefile简介</p>
+<p>make命令执行时，需要Makefile文件来告诉make怎样去编译和链接程序。</p>
+<p>1、编写Makefile的规则：</p>
+<p>​    1）如果这个工程没有编译过，那么我们的所有C文件都要编译并被链接。<br>​    2）如果这个工程的某几个C文件被修改，那么我们只编译被修改的C文件，并链接目标程序。<br>​    3）如果这个工程的头文件被改变了，那么我们需要编译引用了这几个头文件的C文件，并链接目标程序。</p>
+<p>2、Makefile的写法：</p>
+<p>​        target … : prerequisites …<br>​                    command<br>​                    …<br>​                    …</p>
+<p>​    1）target是一个目标文件，可以是Object File，也可以是执行文件。还可以是一个标签（Label）；<br>​    2）prerequisites就是，要生成那个target所需要的文件或是目标；<br>​    3）command也就是make需要执行的命令（任意的Shell命令）；</p>
+<p>​    prerequisites中如果有一个以上的文件比target文件要新的话，command所定义的命令就会被执行！</p>
+<p>如果一个工程有3个头文件，和8个C文件，我们为了完成前面所述的那三个规则，我们的Makefile应该是下面的这个样子的：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">edit : main.o kbd.o command.o display.o \</span><br><span class="line">       insert.o search.o files.o utils.o</span><br><span class="line">		cc -o edit main.o kbd.o command.o display.o \</span><br><span class="line">          insert.o search.o files.o utils.o</span><br><span class="line">main.o : main.c defs.h</span><br><span class="line">    cc -c main.c</span><br><span class="line">kbd.o : kbd.c defs.h command.h</span><br><span class="line">    cc -c kbd.c</span><br><span class="line">command.o : command.c defs.h command.h</span><br><span class="line">    cc -c command.c</span><br><span class="line">display.o : display.c defs.h buffer.h</span><br><span class="line">    cc -c display.c</span><br><span class="line">insert.o : insert.c defs.h buffer.h</span><br><span class="line">    cc -c insert.c</span><br><span class="line">search.o : search.c defs.h buffer.h</span><br><span class="line">    cc -c search.c</span><br><span class="line">files.o : files.c defs.h buffer.h command.h</span><br><span class="line">   	cc -c files.c</span><br><span class="line">utils.o : utils.c defs.h</span><br><span class="line">    cc -c utils.c</span><br><span class="line">clean :</span><br><span class="line">    rm edit main.o kbd.o command.o display.o \</span><br><span class="line">       insert.o search.o files.o utils.o</span><br></pre></td></tr></table></figure>
+<p>在这个makefile中，目标文件（target）包含：执行文件edit和中间目标文件（*.o），依赖文件（prerequisites）就是冒号后面的那些 .c 文件和 .h文件。每一个 .o 文件都有一组依赖文件，而这些 .o 文件又是执行文件 edit 的依赖文件。依赖关系的实质上就是说明了目标文件是由哪些文件生成的，换言之，目标文件是哪些文件更新的。</p>
+<p>在定义好依赖关系后，后续的那一行定义了如何生成目标文件的操作系统命令，一定要以一个Tab键作为开头。记住，make并不管命令是怎么工作的，他只管执行所定义的命令。make会比较targets文件和prerequisites文件的修改日期，如果prerequisites文件的日期要比targets文件的日期要新，或者target不存在的话，那么，make就会执行后续定义的命令。</p>
+<p>这里要说明一点的是，clean不是一个文件，它只不过是一个动作名字，有点像C语言中的lable一样，其冒号后什么也没有，那么，make就不会自动去找文件的依赖性，也就不会自动执行其后所定义的命令。要执行其后的命令，就要在make命令后明显得指出这个lable的名字。这样的方法非常有用，我们可以在一个makefile中定义不用的编译或是和编译无关的命令，比如程序的打包，程序的备份，等等。(命令——“make clean”，以此来清除所有的目标文件，以便重编译。)</p>
+<p>3、Makefile工作原理</p>
+<p>​    1)、make会在当前目录下找名字叫“Makefile”或“makefile”的文件。<br>​    2)、如果找到，它会找文件中的第一个目标文件（target），在上面的例子中，他会找到“edit”这个文件，并把这个文件作为最终的目标文件。<br>​    3)、如果edit文件不存在，或是edit所依赖的后面的 .o 文件的文件修改时间要比edit这个文件新，那么，他就会执行后面所定义的命令来生成edit这个文件。<br>​    4)、如果edit所依赖的.o文件也存在，那么make会在当前文件中找目标为.o文件的依赖性，如果找到则再根据那一个规则生成.o文件。（这有点像一个堆栈的过程）<br>​    5)、当然，你的C文件和H文件是存在的啦，于是make会生成 .o 文件，然后再用 .o 文件生命make的终极任务，也就是执行文件edit了。    </p>
+<p>4、Makefile中使用变量</p>
+<p>为了makefile的易维护，在makefile中我们可以使用变量。makefile的变量也就是一个字符串。在makefile一开始就这样定义：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">objects = main.o kbd.o command.o display.o \</span><br><span class="line">              insert.o search.o files.o utils.o</span><br></pre></td></tr></table></figure>
+<p>以“$(objects)”的方式来使用这个变量。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">objects = main.o kbd.o command.o display.o \</span><br><span class="line">              insert.o search.o files.o utils.o</span><br><span class="line">edit : <span class="variable">$(objects)</span></span><br><span class="line">		cc -o edit <span class="variable">$(objects)</span></span><br><span class="line">main.o : main.c defs.h</span><br><span class="line">    cc -c main.c</span><br><span class="line">kbd.o : kbd.c defs.h command.h</span><br><span class="line">    cc -c kbd.c</span><br><span class="line">command.o : command.c defs.h command.h</span><br><span class="line">    cc -c command.c</span><br><span class="line">display.o : display.c defs.h buffer.h</span><br><span class="line">    cc -c display.c</span><br><span class="line">insert.o : insert.c defs.h buffer.h</span><br><span class="line">    cc -c insert.c</span><br><span class="line">search.o : search.c defs.h buffer.h</span><br><span class="line">    cc -c search.c</span><br><span class="line">files.o : files.c defs.h buffer.h command.h</span><br><span class="line">   	cc -c files.c</span><br><span class="line">utils.o : utils.c defs.h</span><br><span class="line">    cc -c utils.c</span><br><span class="line">clean :</span><br><span class="line">    rm edit (objects)</span><br></pre></td></tr></table></figure>
+<p>5、Makefile自动推导</p>
+<p>make很强大，它可以自动推导文件以及文件依赖关系后面的命令，于是我们就没必要去在每一个[.o]文件后都写上类似的命令，因为，我们的make会自动识别，并自己推导命令。</p>
+<p>只要make看到一个[.o]文件，它就会自动的把[.c]文件加在依赖关系中，如果make找到一个whatever.o，那么whatever.c，就会是whatever.o的依赖文件。并且 cc -c whatever.c 也会被推导出来</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">objects = main.o kbd.o command.o display.o \</span><br><span class="line">              insert.o search.o files.o utils.o</span><br><span class="line"></span><br><span class="line">edit : <span class="variable">$(objects)</span></span><br><span class="line">		cc -o edit <span class="variable">$(objects)</span></span><br><span class="line"></span><br><span class="line">main.o : defs.h</span><br><span class="line">kbd.o : defs.h command.h</span><br><span class="line">command.o : defs.h command.h</span><br><span class="line">display.o : defs.h buffer.h</span><br><span class="line">insert.o : defs.h buffer.h</span><br><span class="line">search.o : defs.h buffer.h</span><br><span class="line">files.o : defs.h buffer.h command.h</span><br><span class="line">utils.o : defs.h</span><br><span class="line"></span><br><span class="line">.PHONY : clean</span><br><span class="line">clean :</span><br><span class="line">		rm edit <span class="variable">$(objects)</span></span><br></pre></td></tr></table></figure>
+<p>6、清空目标文件的规则</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">clean:</span></span><br><span class="line">            rm edit <span class="variable">$(objects)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.PHONY : clean</span><br><span class="line">       clean :</span><br><span class="line">               -rm edit <span class="variable">$(objects)</span></span><br></pre></td></tr></table></figure>
+<p>每个Makefile中都应该写一个清空目标文件（.o和执行文件）的规则，这不仅便于重编译，也很利于保持文件的清洁。clean的规则不要放在文件的开头，不然，这就会变成make的默认目标，不成文的规矩是——“clean从来都是放在文件的最后”。</p>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>

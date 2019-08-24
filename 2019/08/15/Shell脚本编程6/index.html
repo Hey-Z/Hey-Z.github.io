@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Shell脚本编程6 | Hey Blog</title>
+    <meta name="author" content="Hey Z">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content="Life Study Work">
+    <meta name="description" content="摘自《菜鸟教程》–https://www.runoob.com/linux/linux-shell.html1、  ./脚本名，子进程中运行脚本；​        source 脚本名或. ./脚本名，本进程中运行脚本；2、sh (Bourne shell)，最初使用，在shell编程方面优秀，但在用户交互方面欠缺；​        bash (Bourne again shell)，向后兼容sh，在sh基础上增加增强了很多特性；​        dash (Debian Alm...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Hey Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Hey Blog</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/back-end">
+                <span class="nav-text">后端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/algorithm">
+                <span class="nav-text">算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <div class="author-meta">
+            
+            <div class="author-avatar">
+                <a href="/">
+                    <img src="/images/微信头像.jpg" title="Hey Z">
+                </a>
+            </div>
+            
+            <div class="author-name">Hey Z</div>
+            <div class="author-work">Notes on Human Behavior Observatio</div>
+            <div class="author-location">
+                <i class="icon-location vm"></i>
+                <span class="vm">Shanghai, China</span>
+            </div>
+            
+            <div class="author-thread-wrap">
+                <div class="author-threads clearfix">
+                    
+                        <a class="thread-item" href="https://github.com/hey-z" target="_blank" rel="noopener">
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 12.64c-282.752 0-512 229.216-512 512 0 226.208 146.72 418.144 350.144 485.824 25.6 4.736 35.008-11.104 35.008-24.64 0-12.192-0.48-52.544-0.704-95.328-142.464 30.976-172.512-60.416-172.512-60.416-23.296-59.168-56.832-74.912-56.832-74.912-46.464-31.776 3.52-31.136 3.52-31.136 51.392 3.616 78.464 52.768 78.464 52.768 45.664 78.272 119.776 55.648 148.992 42.56 4.576-33.088 17.856-55.68 32.512-68.48-113.728-12.928-233.28-56.864-233.28-253.024 0-55.904 20-101.568 52.768-137.44-5.312-12.896-22.848-64.96 4.96-135.488 0 0 43.008-13.76 140.832 52.48 40.832-11.36 84.64-17.024 128.16-17.248 43.488 0.192 87.328 5.888 128.256 17.248 97.728-66.24 140.64-52.48 140.64-52.48 27.872 70.528 10.336 122.592 5.024 135.488 32.832 35.84 52.704 81.536 52.704 137.44 0 196.64-119.776 239.936-233.792 252.64 18.368 15.904 34.72 47.04 34.72 94.816 0 68.512-0.608 123.648-0.608 140.512 0 13.632 9.216 29.6 35.168 24.576 203.328-67.776 349.856-259.616 349.856-485.76 0-282.784-229.248-512-512-512z" fill="#707070"/></svg>
+                        </a>
+                    
+                        <a class="thread-item" href="http://weibo.com/sanonz" target="_blank" rel="noopener">
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M667.724691 228.072439c44.154639 0 255.473509-11.467169 216.83756 192.390775-5.399987 22.345937-9.459442 56.574506 17.046235 63.815421 24.14798 6.062066 39.011502-19.130709 45.666062-38.305421 3.188622-22.321378 100.936877-314.472228-276.007171-290.179962-12.046361 2.125407-38.785352 12.417821-38.97364 34.56626C632.104425 212.512045 655.741775 226.934522 667.724691 228.072439zM679.594019 316.527027c7.05058-0.826831 116.910687-20.101827 107.916848 95.749738 1.63422 10.524704-5.819542 28.566616 8.992815 32.268938 14.812357 3.703345 20.630876-8.463766 22.218024-19.572778 1.587148-11.109012 27.215852-161.807223-137.365554-144.41818-12.450567 1.37123-20.807908 8.816806-19.396769 19.74981C663.370523 311.237557 672.54344 317.353858 679.594019 316.527027zM726.18515 496.993215c0 0-44.288692 9.56689-23.384593-23.384593 32.961716-64.451918-20.591991-170.193217-159.439292-99.915617-47.831378 25.51-47.831378 7.440459-46.237067-24.447808 4.300956-174.08485-318.347488-49.957809-409.759431 176.334077-51.543933 137.357368 31.003108 256.060887 158.698418 307.833017 311.643809 111.274316 538.583448-72.812329 577.283866-191.860702C874.931916 462.71041 726.18515 496.993215 726.18515 496.993215zM427.294806 792.195563c-147.530055 20.292162-278.3004-44.50154-292.085358-144.721079s94.637404-197.913559 242.166435-218.205721 278.3004 44.50154 292.085358 144.721079S574.824861 771.903401 427.294806 792.195563zM539.748994 583.323419c-11.707646-61.054541-83.562161-98.591459-160.491251-83.839477S249.455445 575.688531 261.163091 636.743072s83.562161 98.591459 160.491251 83.839477S551.45664 644.37796 539.748994 583.323419zM370.101199 664.267962c-26.561959 0-48.095391-18.326391-48.095391-40.932248 0-22.605857 21.533432-40.932248 48.095391-40.932248 26.561959 0 48.095391 18.326391 48.095391 40.932248C418.196591 645.942595 396.663158 664.267962 370.101199 664.267962zM448.895777 609.009428c-9.912767 0-19.995403-11.912307-19.995403-26.605961 0-14.693654 10.082636-26.605961 19.995403-26.605961 9.912767 0 19.995403 11.912307 19.995403 26.605961C468.89118 597.098143 458.808544 609.009428 448.895777 609.009428z" fill="#707070"/></svg>
+                        </a>
+                    
+                        <a class="thread-item" href="huiping_zhu@163.com" target="_blank" rel="noopener">
+                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 589.44L36.096 180.48c2.56-0.576 4.864-1.664 7.488-1.664H980.48c1.6 0 4.992 1.152 7.552 1.6L512 589.44z m510.976-352.384v614.784c0 3.84-1.152 7.168-2.048 10.688l-337.92-348.544L1020.416 224c1.344 4.16 2.56 8.448 2.56 13.056zM3.584 223.936L341.12 513.984 3.2 862.528c-0.832-3.456-2.112-6.848-2.112-10.688V237.056c0-4.672 1.28-8.896 2.56-13.12z m646.528 328.896l340.736 351.36c-3.392 0.896-6.72 2.176-10.432 2.176H43.584c-3.584 0-6.912-1.28-10.24-2.176l340.672-351.36 124.352 106.88a20.672 20.672 0 0 0 27.264 0l124.48-106.88z" fill="#707070"/></svg>
+                        </a>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Shell脚本编程6
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/08/15/Shell脚本编程6/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-15T02:20:36.000Z" itemprop="datePublished">2019-08-15</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/shell教程/">shell教程</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <p>摘自《菜鸟教程》–<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-shell.html</a></p>
+<p>1、  ./脚本名，子进程中运行脚本；</p>
+<p>​        source 脚本名或. ./脚本名，本进程中运行脚本；</p>
+<p>2、sh (Bourne shell)，最初使用，在shell编程方面优秀，但在用户交互方面欠缺；</p>
+<p>​        bash (Bourne again shell)，向后兼容sh，在sh基础上增加增强了很多特性；</p>
+<p>​        dash (Debian Almquist Shell)，比bash小的多，符合POSIX标准，Ubuntu默认；Linux下默认的 sh指向dash；</p>
+<p>​        标记为#!/bin/sh的脚本不应使用任何POSIX没有规定的特性（如let等命令，但#!/bin/bash可以）</p>
+<p>3、shell什么情况下会产生子进程</p>
+<p>​        &amp;，提交后台作业；</p>
+<p>​        管道；</p>
+<p>​        括号命令列表，()操作符；</p>
+<p>​        执行外部脚本程序；</p>
+<p>4、shell不创建子程序的进程创建方式</p>
+<p>​        source命令，脚本结束后返回当前进程；exec命令，脚本结束后退出当前shell进程；</p>
+<p>5、作为子进程，其进程环境与父进程的环境是独立的，所以在变量传递过程中，需要注意子进程内部不能更改到父进程的变量。</p>
+<p>一个shell中的系统环境变量会被复制到子shell中（用export定义的变量，即export的变量能被子进程引用；一个shell中的系统环境变量只对该shell或者它的子shell有效，该shell结束时变量消失（并不能返回到父shell中）；不用export定义的变量只对该shell有效，对子shell也是无效的。</p>
+<p>6、bash shell用一个称作”环境变量”的特性来存储有关shell会话和工作环境的信息，它允许你在内存中存储数据，以便运行在shell上的程序和脚本访问，这些数据可以用来识别用户、账户、系统、shell特性以及任何其他你需要存储的数据。</p>
+<p>shell中的环境变量有全局环境变量和局部环境变量，通过KV(variable=value)的形式声明一个局部变量，export这个局部变量则升级成为全局环境变量。</p>
+<p>全局环境变量：在当前shell进程及子shell进程中可用（父shell进程全局环境变量的一个copy，子shell进程增、删、改、查对父shell进程的全局环境变量均无影响），父shell进程中不可用。</p>
+<p>局部环境变量：当前shell进程可用，父子shell 进程不可用。</p>
+<p>环境变量存在内存当中，断电后消失，如果想在下一次系统加电后还可以访问：</p>
+<p>a.如果此变量是系统级别的（所有用户共享），则可以在/etc/profile中export；</p>
+<p>b.如果此变量只对当前用户有效，则可以在~/.bash_profile(或者~./bash_login，或者~./profile，或者~./bashrc，或者/etc/bashrc中export).</p>
+<p>7、启动shell，向用户提供了一组和linux kernel交互的接口。登陆shell可理解为后续交互shell和非交互shell的顶级父shell。</p>
+<p>​        系统启动后的第一个进程是init，他会进行系统初始化并打开命令行终端，建立命令行所必须的stdin、stdout、stderr，这时用户才能进行系统登陆。当用户输入用户名时（启动shell会fork一个登陆shell进程），/bin/login程序会验证输入的用户名是否存在在/etc/passwd中，若存在，则继续在/etc/shadow中验证你输入的密码。验证通过，/bin/login程序会提取/etc/passwd中和用户相关的HOME、LOGNAME、SHELL、USER等变量来定义一个工作环境，此时/etc/passwd会执行最后一项，也就是用户默认的shell，此shell即为登陆shell的来源。</p>
+<p>​        登陆shell首先会到/etc/profile中读取命令并执行，主要做两件事：定义并声明全局的环境变量，export PATH USER LOGNAME MAIL HOSTNAME HISTSIZE HISTCONTROL，所有的shell进程都可以访问这些变量；到/etc/profile.d目录中执行该目录下的应用启动文件，这些应用随系统而启动，譬如vim、less等；到这两步时不同用户printenv的结果是一样的，然后登陆shell（顶级环境，入口~/.bash_profile）会在各个用户目录下执行一系列的个性化操作得到最终的登陆shell（用户shell进程，不同的用户有不同的shell进程环境）；命令行界面实际上是在登陆shell的环境中执行，输入bash启动的交互shell是登陆shell fork的一个子进程，交互式shell启动第一步检查当前用户的主目录下是否有.bashrc文件（声明局部变量和个性化配置），存在则读取并执行文件中的指令（定义别名、source /etc/bashrc（定义了用户的局部变量）、/etc/profile.d），所以开启一个交互式shell最初和登陆shell环境一样，且交互式shell的操作不会影响到父shell环境！非交互shell即是执行shell脚本，非交互shell作为交互shell fork出来的子进程，要想对非交互shell进行个性化，系统提供的”接口”为环境变量BASH_ENV，当启动一个非交互式shell时，系统会检查这个环境变量来查看要加载执行的启动文件，因此你可以自定义一个文件路径然后export BASH_ENV。</p>
+<p>8、fork、source、exec</p>
+<p>在一个脚本中调用其他脚本有三种方式：fork、source、exec</p>
+<p>a. fork，父shell进程的全局环境变量copy一份给子shell进程，被调用脚本执行完成之后返回给父shell进程，父shell进程继续执行剩下的指令；</p>
+<p>b. source，是把被调用脚本加载到当前shell环境中执行，他们的定义的局部变量共享，在同一个进程中，被调用脚本任何对全局变量的操作均影响父shell进程全局变量；</p>
+<p>c. exec， 也是fork一个子shell环境来执行被调用脚本，但是父shell环境的执行权会被剥夺，无论父shell脚本中的指令是否执行完成，都不再被执行，对着子shell进程的结束而结束；</p>
+<p>9、环境变量PATH</p>
+<p>PATH环境变量定义了各种shell环境搜索执行指令的路径；</p>
+<p>通过软连接和别名alias让自定义脚本可以在当前shell环境中任意被调用：</p>
+<p>a.查看PATH环境变量，任意选择一个当前用户有操作权限的，例/home/work/bin；</p>
+<p>b.编写测试脚本run.sh，放在/home/work/shell/myCodes目录下，然后做软连接ln -s /home/work/shell/myCodes/run.sh /home/work/bin/run;</p>
+<p>c.定义别名，先alias -p看一下，不要定义重复，然后定义别名alias run=”sh run”，完成；</p>
+<p>​    </p>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>

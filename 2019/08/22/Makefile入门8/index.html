@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+
+    
+
+    
+
+    <title>Makefile入门8 | Hey Blog</title>
+    <meta name="author" content="Hey Z">
+    <meta name="version" content="1.0.0">
+    <meta name="keywords" content="Life Study Work">
+    <meta name="description" content="make隐含规则​        转自《跟我一起写Makefile》​        https://seisman.github.io/how-to-write-makefile/index.html​        在Makefile中的“隐含的”，早先约定了的，不需要我们再写出来的规则。“隐含规则”也就是一种惯例，make会按照这种“惯例”心照不喧地来运行，那怕我们的Makefile中没有书写这样的规则。例如，把[.c]文件编译成[.o]文件这一规则，你根本就不用写出来，make...">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+
+    
+    <link rel="alternate" href="/atom.xml" title="Hey Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/images/favicon.ico">
+    
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <main class="app">
+        <header class="header clearfix">
+    <div id="nav" class="nav">
+    <div class="nav-mobile">
+        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
+        <h1 class="nav-mobile-title nav-mobile-item">Hey Blog</h1>
+        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+    </div>
+
+    <nav id="nav-inner" class="nav-inner">
+        
+            <a class="nav-item" href="/">
+                <span class="nav-text">首页</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/front-end">
+                <span class="nav-text">前端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/back-end">
+                <span class="nav-text">后端</span>
+            </a>
+        
+            <a class="nav-item" href="/categories/algorithm">
+                <span class="nav-text">算法</span>
+            </a>
+        
+            <a class="nav-item" href="/tags">
+                <span class="nav-text">标签</span>
+            </a>
+        
+            <a class="nav-item" href="/archives">
+                <span class="nav-text">归档</span>
+            </a>
+        
+            <a class="nav-item" href="/atom.xml">
+                <span class="nav-text">订阅</span>
+            </a>
+        
+            <a class="nav-item" href="/about">
+                <span class="nav-text">关于</span>
+            </a>
+        
+    </nav>
+</div>
+
+    <aside id="aside" class="aside">
+    <div id="aside-mask" class="aside-mask"></div>
+    <div id="aside-inner" class="aside-inner">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+
+        
+        
+        
+        
+
+        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#make隐含规则"><span class="toc-number">1.</span> <span class="toc-text">make隐含规则</span></a></li></ol>
+        
+    </div>
+</aside>
+
+</header>
+
+        <div id="content" class="content"><article class="article" itemscope itemprop="blogPost">
+    
+    <header class="article-header">
+        
+        <h1 itemprop="name">
+            Makefile入门8
+        </h1>
+        
+        <div class="article-meta clearfix">
+            <a class="article-date" href="http://yoursite.com/2019/08/22/Makefile入门8/index.html">
+    
+    <i class="icon-calendar"></i>
+    
+    <time datetime="2019-08-22T06:49:35.000Z" itemprop="datePublished">2019-08-22</time>
+</a>
+
+            
+<div class="article-tag-list">
+    <i class="icon-tag"></i>
+    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
+</div>
+
+
+        </div>
+    </header>
+    
+    <section class="article-body markdown-body">
+        
+        <h1 id="make隐含规则"><a href="#make隐含规则" class="headerlink" title="make隐含规则"></a><strong>make隐含规则</strong></h1><p>​        转自《跟我一起写Makefile》</p>
+<p>​        <a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
+<p>​        在Makefile中的“隐含的”，早先约定了的，不需要我们再写出来的规则。“隐含规则”也就是一种惯例，make会按照这种“惯例”心照不喧地来运行，那怕我们的Makefile中没有书写这样的规则。例如，把[.c]文件编译成[.o]文件这一规则，你根本就不用写出来，make会自动推导出这种规则，并生成我们需要的[.o]文件。</p>
+<p>一、使用隐含规则</p>
+<p>例如，我们有下面的一个Makefile：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo : foo.o bar.o</span><br><span class="line">cc –o foo foo.o bar.o <span class="variable">$(CFLAGS)</span> <span class="variable">$(LDFLAGS)</span></span><br></pre></td></tr></table></figure>
+<p>make会在自己的“隐含规则”库中寻找可以用的规则，如果找到，那么就会使用。如果找不到，那么就会报错。在上面的那个例子中，make调用的隐含规则是，把[.o]的目标的依赖文件置成[.c]，并使用C的编译命令“cc –c $(CFLAGS) [.c]”来生成[.o]的目标。也就是说，我们完全没有必要写下下面的两条规则：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">foo.o : foo.c</span><br><span class="line">	cc –c foo.c <span class="variable">$(CFLAGS)</span></span><br><span class="line">bar.o : bar.c</span><br><span class="line">	cc –c bar.c <span class="variable">$(CFLAGS)</span></span><br></pre></td></tr></table></figure>
+<p>还有，在make的“隐含规则库”中，每一条隐含规则都在库中有其顺序，越靠前的则是越被经常使用的，所以，这会导致我们有些时候即使我们显示地指定了目标依赖，make也不会管。如下面这条规则（没有命令）：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo.o : foo.p</span><br></pre></td></tr></table></figure>
+<p>依赖文件“foo.p”（Pascal程序的源文件）有可能变得没有意义。如果目录下存在了“foo.c”文件，那么我们的隐含规则一样会生效，并会通过“foo.c”调用C的编译器生成foo.o文件。因为，在隐含规则中，Pascal的规则出现在C的规则之后，所以，make找到可以生成foo.o的C的规则就不再寻找下一条规则了。如果你确实不希望任何隐含规则推导，那么，你就不要只写出“依赖规则”，而不写命令。</p>
+<p>二、隐含规则示例</p>
+<p>有时，即使是我们指定了“-r”参数，某些隐含规则还是会生效，因为有许多的隐含规则都是使用了“后缀规则”来定义的，所以，只要隐含规则中有“后缀列表”（也就一系统定义在目标.SUFFIXES的依赖目标），那么隐含规则就会生效。默认的后缀列表是：.out, .a, .ln, .o, .c, .cc, .C, .p, .f, .F, .r, .y, .l, .s, .S, .mod, .sym, .def, .h, .info, .dvi, .tex, .texinfo, .texi, .txinfo, .w, .ch .web, .sh, .elc, .el。</p>
+<p>1、编译C程序的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.o”的目标的依赖目标会自动推导为“&lt;n&gt;;.c”，并且其生成命令是“<span class="variable">$(CC)</span> –c <span class="variable">$(CPPFLAGS)</span> <span class="variable">$(CFLAGS)</span>”</span><br></pre></td></tr></table></figure>
+<p>2、编译C++程序的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.o”的目标的依赖目标会自动推导为“&lt;n&gt;;.cc”或是“&lt;n&gt;;.C”，并且其生成命令是“<span class="variable">$(CXX)</span> –c <span class="variable">$(CPPFLAGS)</span> <span class="variable">$(CFLAGS)</span>”。</span><br><span class="line">（建议使用“.cc”作为C++源文件的后缀，而不是“.C”）</span><br></pre></td></tr></table></figure>
+<p>3、编译Pascal程序的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.o”的目标的依赖目标会自动推导为“&lt;n&gt;;.p”，并且其生成命令是“<span class="variable">$(PC)</span> –c  <span class="variable">$(PFLAGS)</span>”。</span><br></pre></td></tr></table></figure>
+<p>4、编译Fortran/Ratfor程序的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">“&lt;n&gt;;.o”的目标的依赖目标会自动推导为“&lt;n&gt;;.r”或“&lt;n&gt;;.F”或“&lt;n&gt;;.f”，并且其生成命令是:</span></span><br><span class="line">    “.f”  “<span class="variable">$(FC)</span> –c  <span class="variable">$(FFLAGS)</span>”</span><br><span class="line">    “.F”  “<span class="variable">$(FC)</span> –c  <span class="variable">$(FFLAGS)</span> <span class="variable">$(CPPFLAGS)</span>”</span><br><span class="line">    “.f”  “<span class="variable">$(FC)</span> –c  <span class="variable">$(FFLAGS)</span> <span class="variable">$(RFLAGS)</span>”</span><br></pre></td></tr></table></figure>
+<p>5、预处理Fortran/Ratfor程序的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.f”的目标的依赖目标会自动推导为“&lt;n&gt;;.r”或“&lt;n&gt;;.F”。这个规则只是转换Ratfor或有预处理的Fortran程序到一个标准的Fortran程序。其使用的命令是：</span><br><span class="line">    “.F”  “<span class="variable">$(FC)</span> –F <span class="variable">$(CPPFLAGS)</span> <span class="variable">$(FFLAGS)</span>”</span><br><span class="line">    “.r”  “<span class="variable">$(FC)</span> –F <span class="variable">$(FFLAGS)</span> <span class="variable">$(RFLAGS)</span>”</span><br></pre></td></tr></table></figure>
+<p>6、编译Modula-2程序的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.sym”的目标的依赖目标会自动推导为“&lt;n&gt;;.def”，并且其生成命令是：“<span class="variable">$(M2C)</span> <span class="variable">$(M2FLAGS)</span> <span class="variable">$(DEFFLAGS)</span>”。</span><br><span class="line">“&lt;n.o&gt;;” 的目标的依赖目标会自动推导为“&lt;n&gt;;.mod”，并且其生成命令是：“<span class="variable">$(M2C)</span> <span class="variable">$(M2FLAGS)</span> <span class="variable">$(MODFLAGS)</span>”。</span><br></pre></td></tr></table></figure>
+<p>7、汇编和汇编预处理的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.o” 的目标的依赖目标会自动推导为“&lt;n&gt;;.s”，默认使用编译器“as”，并且其生成命令是：“<span class="variable">$(AS)</span> <span class="variable">$(ASFLAGS)</span>”。</span><br><span class="line">“&lt;n&gt;;.s” 的目标的依赖目标会自动推导为“&lt;n&gt;;.S”，默认使用C预编译器“cpp”，并且其生成命令是：“<span class="variable">$(AS)</span> <span class="variable">$(ASFLAGS)</span>”。</span><br></pre></td></tr></table></figure>
+<p>8、链接Object文件的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;”目标依赖于“&lt;n&gt;;.o”，通过运行C的编译器来运行链接程序生成（一般是“ld”），其生成命令是：“<span class="variable">$(CC)</span> <span class="variable">$(LDFLAGS)</span> &lt;n&gt;;.o <span class="variable">$(LOADLIBES)</span> <span class="variable">$(LDLIBS)</span>”。</span><br></pre></td></tr></table></figure>
+<p>这个规则对于只有一个源文件的工程有效，同时也对多个Object文件（由不同的源文件生成）的也有效。例如如下规则：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x : y.o z.o</span><br></pre></td></tr></table></figure>
+<p>并且“x.c”、“y.c”和“z.c”都存在时，隐含规则将执行如下命令：</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cc -c x.c -o x.o</span><br><span class="line">cc -c y.c -o y.o</span><br><span class="line">cc -c z.c -o z.o</span><br><span class="line">cc x.o y.o z.o -o x</span><br><span class="line">rm -f x.o</span><br><span class="line">rm -f y.o</span><br><span class="line">rm -f z.o</span><br></pre></td></tr></table></figure>
+<p>如果没有一个源文件（如上例中的x.c）和你的目标名字（如上例中的x）相关联，那么，你最好写出自己的生成规则，不然，隐含规则会报错的。</p>
+<p>9、Yacc C程序时的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.c”的依赖文件被自动推导为“n.y”（Yacc生成的文件），其生成命令是：“<span class="variable">$(YACC)</span> <span class="variable">$(YFALGS)</span>”。（“Yacc”是一个语法分析器）</span><br></pre></td></tr></table></figure>
+<p>10、Lex C程序时的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.c”的依赖文件被自动推导为“n.l”（Lex生成的文件），其生成命令是：“<span class="variable">$(LEX)</span> <span class="variable">$(LFALGS)</span>”。</span><br></pre></td></tr></table></figure>
+<p>11、Lex Ratfor程序时的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.r”的依赖文件被自动推导为“n.l”（Lex生成的文件），其生成命令是：“<span class="variable">$(LEX)</span> <span class="variable">$(LFALGS)</span>”。</span><br></pre></td></tr></table></figure>
+<p>12、从C程序、Yacc文件或Lex文件创建Lint库的隐含规则。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">“&lt;n&gt;;.ln” （lint生成的文件）的依赖文件被自动推导为“n.c”，其生成命令是：“<span class="variable">$(LINT)</span> <span class="variable">$(LINTFALGS)</span> <span class="variable">$(CPPFLAGS)</span> -i”。</span><br><span class="line">对于“&lt;n&gt;;.y”和“&lt;n&gt;;.l”也是同样的规则。</span><br></pre></td></tr></table></figure>
+<p>三、隐含规则使用的变量</p>
+<p>我们可以把隐含规则中使用的变量分成两种：一种是命令相关的，如“CC”；一种是参数相的关，如“CFLAGS”。下面是所有隐含规则中会用到的变量：</p>
+<p>1、关于命令的变量。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">AR </span><br><span class="line">    函数库打包程序。默认命令是“ar”。 </span><br><span class="line">AS </span><br><span class="line">    汇编语言编译程序。默认命令是“as”。</span><br><span class="line">CC </span><br><span class="line">    C语言编译程序。默认命令是“cc”。</span><br><span class="line">CXX </span><br><span class="line">    C++语言编译程序。默认命令是“g++”。</span><br><span class="line">CO </span><br><span class="line">    从 RCS文件中扩展文件程序。默认命令是“co”。</span><br><span class="line">CPP </span><br><span class="line">    C程序的预处理器（输出是标准输出设备）。默认命令是“<span class="variable">$(CC)</span> –E”。</span><br><span class="line">FC </span><br><span class="line">    Fortran 和 Ratfor 的编译器和预处理程序。默认命令是“f77”。</span><br><span class="line">GET </span><br><span class="line">    从SCCS文件中扩展文件的程序。默认命令是“get”。 </span><br><span class="line">LEX </span><br><span class="line">    Lex方法分析器程序（针对于C或Ratfor）。默认命令是“lex”。</span><br><span class="line">PC </span><br><span class="line">    Pascal语言编译程序。默认命令是“pc”。</span><br><span class="line">YACC </span><br><span class="line">    Yacc文法分析器（针对于C程序）。默认命令是“yacc”。</span><br><span class="line">YACCR </span><br><span class="line">    Yacc文法分析器（针对于Ratfor程序）。默认命令是“yacc –r”。</span><br><span class="line">MAKEINFO </span><br><span class="line">    转换Texinfo源文件（.texi）到Info文件程序。默认命令是“makeinfo”。</span><br><span class="line">TEX </span><br><span class="line">    从TeX源文件创建TeX DVI文件的程序。默认命令是“tex”。</span><br><span class="line">TEXI2DVI </span><br><span class="line">    从Texinfo源文件创建军TeX DVI 文件的程序。默认命令是“texi2dvi”。</span><br><span class="line">WEAVE </span><br><span class="line">    转换Web到TeX的程序。默认命令是“weave”。</span><br><span class="line">CWEAVE </span><br><span class="line">    转换C Web 到 TeX的程序。默认命令是“cweave”。</span><br><span class="line">TANGLE </span><br><span class="line">    转换Web到Pascal语言的程序。默认命令是“tangle”。</span><br><span class="line">CTANGLE </span><br><span class="line">    转换C Web 到 C。默认命令是“ctangle”。</span><br><span class="line">RM </span><br><span class="line">    删除文件命令。默认命令是“rm –f”。</span><br></pre></td></tr></table></figure>
+<p>2、关于命令参数的变量</p>
+<p>下面的这些变量都是相关上面的命令的参数。如果没有指明其默认值，那么其默认值都是空。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">ARFLAGS </span><br><span class="line">    函数库打包程序AR命令的参数。默认值是“rv”。</span><br><span class="line">ASFLAGS </span><br><span class="line">    汇编语言编译器参数。（当明显地调用“.s”或“.S”文件时）。 </span><br><span class="line">CFLAGS </span><br><span class="line">    C语言编译器参数。</span><br><span class="line">CXXFLAGS </span><br><span class="line">    C++语言编译器参数。</span><br><span class="line">COFLAGS </span><br><span class="line">    RCS命令参数。 </span><br><span class="line">CPPFLAGS </span><br><span class="line">    C预处理器参数。（ C 和 Fortran 编译器也会用到）。</span><br><span class="line">FFLAGS </span><br><span class="line">    Fortran语言编译器参数。</span><br><span class="line">GFLAGS </span><br><span class="line">    SCCS “get”程序参数。</span><br><span class="line">LDFLAGS </span><br><span class="line">    链接器参数。（如：“ld”）</span><br><span class="line">LFLAGS </span><br><span class="line">    Lex文法分析器参数。</span><br><span class="line">PFLAGS </span><br><span class="line">    Pascal语言编译器参数。</span><br><span class="line">RFLAGS </span><br><span class="line">    Ratfor 程序的Fortran 编译器参数。</span><br><span class="line">YFLAGS </span><br><span class="line">    Yacc文法分析器参数。</span><br></pre></td></tr></table></figure>
+<p> 四、隐含规则链</p>
+<p>有些时候，一个目标可能被一系列的隐含规则所作用。例如，一个[.o]的文件生成，可能会是先被Yacc的[.y]文件先成[.c]，然后再被C的编译器生成。我们把这一系列的隐含规则叫做“隐含规则链”。</p>
+<p>在上面的例子中，如果文件[.c]存在，那么就直接调用C的编译器的隐含规则，如果没有[.c]文件，但有一个[.y]文件，那么Yacc的隐含规则会被调用，生成[.c]文件，然后，再调用C编译的隐含规则最终由[.c]生成[.o]文件，达到目标。</p>
+<p>在默认情况下，对于中间目标，它和一般的目标有两个地方所不同：第一个不同是除非中间的目标不存在，才会引发中间规则。第二个不同的是，只要目标成功产生，那么，产生最终目标过程中，所产生的中间目标文件会被以“rm -f”删除。</p>
+<p>通常，一个被makefile指定成目标或是依赖目标的文件不能被当作中介。然而，你可以明显地说明一个文件或是目标是中介目标，你可以使用伪目标“.INTERMEDIATE”来强制声明。（如：.INTERMEDIATE ： mid ）</p>
+<p>你也可以阻止make自动删除中间目标，要做到这一点，你可以使用伪目标“.SECONDARY”来强制声明（如：.SECONDARY : sec）。你还可以把你的目标，以模式的方式来指定（如：%.o）成伪目标“.PRECIOUS”的依赖目标，以保存被隐含规则所生成的中间文件。</p>
+<p>在“隐含规则链”中，禁止同一个目标出现两次或两次以上，这样一来，就可防止在make自动推导时出现无限递归的情况。</p>
+<p>Make会优化一些特殊的隐含规则，而不生成中间文件。如，从文件“foo.c”生成目标程序“foo”，按道理，make会编译生成中间文件“foo.o”，然后链接成“foo”，但在实际情况下，这一动作可以被一条“cc”的命令完成（cc –o foo foo.c），于是优化过的规则就不会生成中间文件。</p>
+<p>五、定义模式规则</p>
+<p>你可以使用模式规则来定义一个隐含规则。一个模式规则就好像一个一般的规则，只是在规则中，目标的定义需要有”%”字符。”%”的意思是表示一个或多个任意字符。在依赖目标中同样可以使用”%”，只是依赖目标中的”%”的取值，取决于其目标。</p>
+<p>有一点需要注意的是，”%”的展开发生在变量和函数的展开之后，变量和函数的展开发生在make载入Makefile时，而模式规则中的”%”则发生在运行时。</p>
+<p>1、模式规则介绍</p>
+<p>模式规则中，至少在规则的目标定义中要包含”%”，否则，就是一般的规则。目标中的”%”定义表示对文件名的匹配，”%”表示长度任意的非空字符串。例如：”%.c”表示以”.c”结尾的文件名（文件名的长度至少为3），而”s.%.c”则表示以”s.”开头，”.c”结尾的文件名（文件名的长度至少为5）。</p>
+<p>2、模式规则示例</p>
+<p>下面这个例子表示了,把所有的[.c]文件都编译成[.o]文件.</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">%.o : %.c</span><br><span class="line">	<span class="variable">$(CC)</span> -c <span class="variable">$(CFLAGS)</span> <span class="variable">$(CPPFLAGS)</span> <span class="variable">$&lt;</span> -o <span class="variable">$@</span></span><br></pre></td></tr></table></figure>
+<p>其中，”\$@”表示所有的目标的值，”$&lt;”表示了所有依赖目标的值。这些奇怪的变量我们叫”自动化变量”</p>
+<p>3、自动化变量</p>
+<p>自动化变量，就是这种变量会把模式中所定义的一系列的文件自动地挨个取出，直至所有的符合模式的文件都取完了。这种自动化变量只应出现在规则的命令中。</p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$@</span></span><br><span class="line"><span class="comment">#表示规则中的目标文件集。在模式规则中，如果有多个目标，那么，"$@"就是匹配于目标中模式定义的集合。</span></span><br><span class="line"><span class="variable">$%</span></span><br><span class="line"><span class="comment">#仅当目标是函数库文件中，表示规则中的目标成员名。例如，如果一个目标是"foo.a(bar.o)"，那么，"$%"就是"bar.o"，"$@"就是"foo.a"。如果目标不是函数库文件（Unix下是[.a]，Windows下是[.lib]），那么，其值为空。</span></span><br><span class="line"><span class="variable">$&lt;</span></span><br><span class="line"><span class="comment">#依赖目标中的第一个目标名字。如果依赖目标是以模式（即"%"）定义的，那么"$&lt;"将是符合模式的一系列的文件集。注意，其是一个一个取出来的。</span></span><br><span class="line"><span class="variable">$?</span></span><br><span class="line"><span class="comment">#所有比目标新的依赖目标的集合。以空格分隔。</span></span><br><span class="line"><span class="variable">$^</span></span><br><span class="line"><span class="comment">#所有的依赖目标的集合。以空格分隔。如果在依赖目标中有多个重复的，那个这个变量会去除重复的依赖目标，只保留一份。</span></span><br><span class="line"><span class="variable">$+</span></span><br><span class="line"><span class="comment">#这个变量很像"​\$^"，也是所有依赖目标的集合。只是它不去除重复的依赖目标。</span></span><br></pre></td></tr></table></figure>
+
+        
+    </section>
+</article>
+
+
+
+</div>
+        <footer class="footer">
+    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
+
+    
+</footer>
+
+    </main>
+
+    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var nodes = {
+            nav: $('#nav'),
+            aside: $('#aside'),
+            asideInner: $('#aside-inner'),
+            navInner: $('#nav-inner')
+        };
+
+        var doing = false;
+        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
+            if (nodes.aside.hasClass('mobile-open')) {
+                nodes.aside.removeClass('mobile-open');
+            } else {
+                nodes.aside.removeClass('mobile-close panel-show');
+            }
+            doing = false;
+        });
+        $('#open-panel, #aside-mask').on('click', function() {
+            if (doing) {
+                return;
+            }
+            
+            if (nodes.aside.hasClass('panel-show')) {
+                nodes.aside.addClass('mobile-close');
+            } else {
+                nodes.aside.addClass('mobile-open panel-show');
+            }
+        });
+        $('#open-menus').on('click', function() {
+            nodes.navInner.slideToggle();
+        });
+
+        if (window.innerWidth <= 960) {
+            setTimeout(function() {
+                nodes.navInner.slideUp();
+            }, 3000);
+        }
+    });
+    </script>
+    
+        <script type="text/javascript" src="/js/scrollspy.min.js"></script>
+        <script type="text/javascript">
+        $(document.body).scrollspy({target: '#aside-inner'});
+        </script>
+    
+
+</body>
+</html>
