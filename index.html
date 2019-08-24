@@ -1,156 +1,352 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head><meta name="generator" content="Hexo 3.8.0">
-    <meta charset="UTF-8">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
 
-    
 
-    
 
-    <title>Hey Blog</title>
-    <meta name="author" content="Hey Z">
-    <meta name="version" content="1.0.0">
-    <meta name="keywords" content="Life Study Work">
-    <meta name="description" content="LIFE WAS LIKE A BOX OF CHOCOLATES">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
 
-    
-    <link rel="alternate" href="/atom.xml" title="Hey Blog" type="application/atom+xml">
-    
-    
-    <link rel="icon" href="/images/favicon.ico">
-    
 
-    <link rel="stylesheet" href="/css/style.css">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="LIFE WAS LIKE A BOX OF CHOCOLATES">
+<meta name="keywords" content="Life Study Work">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hey Blog">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hey Blog">
+<meta property="og:description" content="LIFE WAS LIKE A BOX OF CHOCOLATES">
+<meta property="og:locale" content="zh-Hans">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hey Blog">
+<meta name="twitter:description" content="LIFE WAS LIKE A BOX OF CHOCOLATES">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/">
+
+
+
+
+
+  <title>Hey Blog</title>
+  
+
+
+
+
+
+
+
+
 </head>
-<body>
 
-    <main class="app">
-        <header class="header clearfix">
-    <div id="nav" class="nav">
-    <div class="nav-mobile">
-        <button id="open-panel" class="open-panel nav-mobile-item"><i class="icon-documents"></i></button>
-        <h1 class="nav-mobile-title nav-mobile-item">Hey Blog</h1>
-        <button id="open-menus" class="open-panel nav-mobile-item"><i class="icon-library"></i></button>
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left 
+  page-home">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Hey Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
     </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
 
-    <nav id="nav-inner" class="nav-inner">
-        
-            <a class="nav-item active" href="/">
-                <span class="nav-text">首页</span>
-            </a>
-        
-            <a class="nav-item" href="/categories/front-end">
-                <span class="nav-text">前端</span>
-            </a>
-        
-            <a class="nav-item" href="/categories/back-end">
-                <span class="nav-text">后端</span>
-            </a>
-        
-            <a class="nav-item" href="/categories/algorithm">
-                <span class="nav-text">算法</span>
-            </a>
-        
-            <a class="nav-item" href="/tags">
-                <span class="nav-text">标签</span>
-            </a>
-        
-            <a class="nav-item" href="/archives">
-                <span class="nav-text">归档</span>
-            </a>
-        
-            <a class="nav-item" href="/atom.xml">
-                <span class="nav-text">订阅</span>
-            </a>
-        
-            <a class="nav-item" href="/about">
-                <span class="nav-text">关于</span>
-            </a>
-        
-    </nav>
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
 </div>
 
-    <aside id="aside" class="aside">
-    <div id="aside-mask" class="aside-mask"></div>
-    <div id="aside-inner" class="aside-inner">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit"><i class="icon-search-stroke"></i></button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+<nav class="site-nav">
+  
 
+  
+    <ul id="menu" class="menu">
+      
         
-        
-
-        
-        <div class="author-meta">
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
             
-            <div class="author-avatar">
-                <a href="/">
-                    <img src="/images/微信头像.jpg" title="Hey Z">
-                </a>
-            </div>
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
-            <div class="author-name">Hey Z</div>
-            <div class="author-work">Notes on Human Behavior Observatio</div>
-            <div class="author-location">
-                <i class="icon-location vm"></i>
-                <span class="vm">Shanghai, China</span>
-            </div>
-            
-            <div class="author-thread-wrap">
-                <div class="author-threads clearfix">
-                    
-                        <a class="thread-item" href="https://github.com/hey-z" target="_blank" rel="noopener">
-                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 12.64c-282.752 0-512 229.216-512 512 0 226.208 146.72 418.144 350.144 485.824 25.6 4.736 35.008-11.104 35.008-24.64 0-12.192-0.48-52.544-0.704-95.328-142.464 30.976-172.512-60.416-172.512-60.416-23.296-59.168-56.832-74.912-56.832-74.912-46.464-31.776 3.52-31.136 3.52-31.136 51.392 3.616 78.464 52.768 78.464 52.768 45.664 78.272 119.776 55.648 148.992 42.56 4.576-33.088 17.856-55.68 32.512-68.48-113.728-12.928-233.28-56.864-233.28-253.024 0-55.904 20-101.568 52.768-137.44-5.312-12.896-22.848-64.96 4.96-135.488 0 0 43.008-13.76 140.832 52.48 40.832-11.36 84.64-17.024 128.16-17.248 43.488 0.192 87.328 5.888 128.256 17.248 97.728-66.24 140.64-52.48 140.64-52.48 27.872 70.528 10.336 122.592 5.024 135.488 32.832 35.84 52.704 81.536 52.704 137.44 0 196.64-119.776 239.936-233.792 252.64 18.368 15.904 34.72 47.04 34.72 94.816 0 68.512-0.608 123.648-0.608 140.512 0 13.632 9.216 29.6 35.168 24.576 203.328-67.776 349.856-259.616 349.856-485.76 0-282.784-229.248-512-512-512z" fill="#707070"/></svg>
-                        </a>
-                    
-                        <a class="thread-item" href="http://weibo.com/sanonz" target="_blank" rel="noopener">
-                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M667.724691 228.072439c44.154639 0 255.473509-11.467169 216.83756 192.390775-5.399987 22.345937-9.459442 56.574506 17.046235 63.815421 24.14798 6.062066 39.011502-19.130709 45.666062-38.305421 3.188622-22.321378 100.936877-314.472228-276.007171-290.179962-12.046361 2.125407-38.785352 12.417821-38.97364 34.56626C632.104425 212.512045 655.741775 226.934522 667.724691 228.072439zM679.594019 316.527027c7.05058-0.826831 116.910687-20.101827 107.916848 95.749738 1.63422 10.524704-5.819542 28.566616 8.992815 32.268938 14.812357 3.703345 20.630876-8.463766 22.218024-19.572778 1.587148-11.109012 27.215852-161.807223-137.365554-144.41818-12.450567 1.37123-20.807908 8.816806-19.396769 19.74981C663.370523 311.237557 672.54344 317.353858 679.594019 316.527027zM726.18515 496.993215c0 0-44.288692 9.56689-23.384593-23.384593 32.961716-64.451918-20.591991-170.193217-159.439292-99.915617-47.831378 25.51-47.831378 7.440459-46.237067-24.447808 4.300956-174.08485-318.347488-49.957809-409.759431 176.334077-51.543933 137.357368 31.003108 256.060887 158.698418 307.833017 311.643809 111.274316 538.583448-72.812329 577.283866-191.860702C874.931916 462.71041 726.18515 496.993215 726.18515 496.993215zM427.294806 792.195563c-147.530055 20.292162-278.3004-44.50154-292.085358-144.721079s94.637404-197.913559 242.166435-218.205721 278.3004 44.50154 292.085358 144.721079S574.824861 771.903401 427.294806 792.195563zM539.748994 583.323419c-11.707646-61.054541-83.562161-98.591459-160.491251-83.839477S249.455445 575.688531 261.163091 636.743072s83.562161 98.591459 160.491251 83.839477S551.45664 644.37796 539.748994 583.323419zM370.101199 664.267962c-26.561959 0-48.095391-18.326391-48.095391-40.932248 0-22.605857 21.533432-40.932248 48.095391-40.932248 26.561959 0 48.095391 18.326391 48.095391 40.932248C418.196591 645.942595 396.663158 664.267962 370.101199 664.267962zM448.895777 609.009428c-9.912767 0-19.995403-11.912307-19.995403-26.605961 0-14.693654 10.082636-26.605961 19.995403-26.605961 9.912767 0 19.995403 11.912307 19.995403 26.605961C468.89118 597.098143 458.808544 609.009428 448.895777 609.009428z" fill="#707070"/></svg>
-                        </a>
-                    
-                        <a class="thread-item" href="huiping_zhu@163.com" target="_blank" rel="noopener">
-                            <?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="icon" width="200px" height="200.00px" viewbox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M512 589.44L36.096 180.48c2.56-0.576 4.864-1.664 7.488-1.664H980.48c1.6 0 4.992 1.152 7.552 1.6L512 589.44z m510.976-352.384v614.784c0 3.84-1.152 7.168-2.048 10.688l-337.92-348.544L1020.416 224c1.344 4.16 2.56 8.448 2.56 13.056zM3.584 223.936L341.12 513.984 3.2 862.528c-0.832-3.456-2.112-6.848-2.112-10.688V237.056c0-4.672 1.28-8.896 2.56-13.12z m646.528 328.896l340.736 351.36c-3.392 0.896-6.72 2.176-10.432 2.176H43.584c-3.584 0-6.912-1.28-10.24-2.176l340.672-351.36 124.352 106.88a20.672 20.672 0 0 0 27.264 0l124.48-106.88z" fill="#707070"/></svg>
-                        </a>
-                    
-                </div>
-            </div>
-            
-        </div>
+            首页
+          </a>
+        </li>
+      
         
-    </div>
-</aside>
-
-</header>
-
-        <div id="content" class="content">
-    <article class="article" itemscope itemprop="blogPost">
-    
-    <header class="article-header">
-        
-        <h1 itemprop="name">
-            <a href="/2019/08/22/Makefile入门8/">Makefile入门8</a>
-        </h1>
-        
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-22T06:49:35.000Z" itemprop="datePublished">2019-08-22</time>
-</a>
-
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
 
 
-        </div>
+
+ </div>
     </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
-    <section class="article-body markdown-body">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/Makefile入门8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 id="make隐含规则"><a href="#make隐含规则" class="headerlink" title="make隐含规则"></a><strong>make隐含规则</strong></h1><p>​        转自《跟我一起写Makefile》</p>
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/22/Makefile入门8/" itemprop="url">Makefile入门8</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-22T14:49:35+08:00">
+                2019-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="make隐含规则"><a href="#make隐含规则" class="headerlink" title="make隐含规则"></a><strong>make隐含规则</strong></h1><p>​        转自《跟我一起写Makefile》</p>
 <p>​        <a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>​        在Makefile中的“隐含的”，早先约定了的，不需要我们再写出来的规则。“隐含规则”也就是一种惯例，make会按照这种“惯例”心照不喧地来运行，那怕我们的Makefile中没有书写这样的规则。例如，把[.c]文件编译成[.o]文件这一规则，你根本就不用写出来，make会自动推导出这种规则，并生成我们需要的[.o]文件。</p>
 <p>一、使用隐含规则</p>
@@ -220,40 +416,147 @@
 <p>自动化变量，就是这种变量会把模式中所定义的一系列的文件自动地挨个取出，直至所有的符合模式的文件都取完了。这种自动化变量只应出现在规则的命令中。</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$@</span></span><br><span class="line"><span class="comment">#表示规则中的目标文件集。在模式规则中，如果有多个目标，那么，"$@"就是匹配于目标中模式定义的集合。</span></span><br><span class="line"><span class="variable">$%</span></span><br><span class="line"><span class="comment">#仅当目标是函数库文件中，表示规则中的目标成员名。例如，如果一个目标是"foo.a(bar.o)"，那么，"$%"就是"bar.o"，"$@"就是"foo.a"。如果目标不是函数库文件（Unix下是[.a]，Windows下是[.lib]），那么，其值为空。</span></span><br><span class="line"><span class="variable">$&lt;</span></span><br><span class="line"><span class="comment">#依赖目标中的第一个目标名字。如果依赖目标是以模式（即"%"）定义的，那么"$&lt;"将是符合模式的一系列的文件集。注意，其是一个一个取出来的。</span></span><br><span class="line"><span class="variable">$?</span></span><br><span class="line"><span class="comment">#所有比目标新的依赖目标的集合。以空格分隔。</span></span><br><span class="line"><span class="variable">$^</span></span><br><span class="line"><span class="comment">#所有的依赖目标的集合。以空格分隔。如果在依赖目标中有多个重复的，那个这个变量会去除重复的依赖目标，只保留一份。</span></span><br><span class="line"><span class="variable">$+</span></span><br><span class="line"><span class="comment">#这个变量很像"​\$^"，也是所有依赖目标的集合。只是它不去除重复的依赖目标。</span></span><br></pre></td></tr></table></figure>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/Makefile入门7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/22/Makefile入门7/">Makefile入门7</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-22T06:27:04.000Z" itemprop="datePublished">2019-08-22</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/22/Makefile入门7/" itemprop="url">Makefile入门7</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-22T14:27:04+08:00">
+                2019-08-22
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="make的运行"><a href="#make的运行" class="headerlink" title="make的运行"></a><strong>make的运行</strong></h1><p>​        转自《跟我一起写Makefile》</p>
+          
+            <h1 id="make的运行"><a href="#make的运行" class="headerlink" title="make的运行"></a><strong>make的运行</strong></h1><p>​        转自《跟我一起写Makefile》</p>
 <p>​        <a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>​        一般来说，最简单的就是直接在命令行下输入make命令，make命令会找当前目录的makefile来执行，一切都是自动的。但也有时你也许只想让make重编译某些文件，而不是整个工程，而又有的时候你有几套编译规则，你想在不同的时候使用不同的编译规则，等等。</p>
 <p>一、make的退出码</p>
@@ -309,40 +612,147 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">“-W &lt;file&gt;;”</span><br><span class="line">“--what-if=&lt;file&gt;;”</span><br><span class="line">“--new-file=&lt;file&gt;;”</span><br><span class="line">“--assume-file=&lt;file&gt;;”</span><br><span class="line"><span class="comment">#假定目标&lt;file&gt;;需要更新，如果和“-n”选项使用，那么这个参数会输出该目标更新时的运行动作。如果没有“-n”那么就像运行UNIX的“touch”命令一样，使得&lt;file&gt;;的修改时间为当前时间。</span></span><br></pre></td></tr></table></figure>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">“--warn-undefined-variables”</span><br><span class="line"><span class="comment">#只要make发现有未定义的变量，那么就输出警告信息。</span></span><br></pre></td></tr></table></figure>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/22/Makefile入门6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/22/Makefile入门6/">Makefile入门6</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-22T05:35:28.000Z" itemprop="datePublished">2019-08-22</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/22/Makefile入门6/" itemprop="url">Makefile入门6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-22T13:35:28+08:00">
+                2019-08-22
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="Makefile判断和函数"><a href="#Makefile判断和函数" class="headerlink" title="Makefile判断和函数"></a><strong>Makefile判断和函数</strong></h1><p>​        转自《跟我一起写Makefile》</p>
+          
+            <h1 id="Makefile判断和函数"><a href="#Makefile判断和函数" class="headerlink" title="Makefile判断和函数"></a><strong>Makefile判断和函数</strong></h1><p>​        转自《跟我一起写Makefile》</p>
 <p>​        <a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>​        使用条件判断，可以让make根据运行时的不同情况选择不同的执行分支。条件表达式可以是比较变量的值，或是比较变量和常量的值。</p>
 <p>一、条件判断</p>
@@ -420,40 +830,147 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#示例一，会在变量ERROR_001定义了后执行时产生error调用</span></span><br><span class="line"><span class="keyword">ifdef</span> ERROR_001</span><br><span class="line">	<span class="variable">$(<span class="built_in">error</span> <span class="built_in">error</span> is <span class="variable">$(ERROR_001)</span>)</span></span><br><span class="line"><span class="keyword">endif</span></span><br><span class="line"><span class="comment">#示例二，在目录err被执行时才发生error调用</span></span><br><span class="line">ERR = <span class="variable">$(<span class="built_in">error</span> found an <span class="built_in">error</span>!)</span></span><br><span class="line"><span class="meta"><span class="meta-keyword">.PHONY</span>: err</span></span><br><span class="line"><span class="section">err: ; <span class="variable">$(ERR)</span></span></span><br></pre></td></tr></table></figure>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$(<span class="built_in">warning</span> &lt;text ...&gt;)</span></span><br><span class="line"><span class="comment">#这个函数很像error函数，只是它并不会让make退出，只是输出一段警告信息，而make继续执行。</span></span><br></pre></td></tr></table></figure>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/Makefile入门5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/21/Makefile入门5/">Makefile入门5</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-21T15:44:02.000Z" itemprop="datePublished">2019-08-21</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/21/Makefile入门5/" itemprop="url">Makefile入门5</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T23:44:02+08:00">
+                2019-08-21
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="Makefile变量"><a href="#Makefile变量" class="headerlink" title="Makefile变量"></a><strong>Makefile变量</strong></h1><p>​        转自《跟我一起写Makefile》</p>
+          
+            <h1 id="Makefile变量"><a href="#Makefile变量" class="headerlink" title="Makefile变量"></a><strong>Makefile变量</strong></h1><p>​        转自《跟我一起写Makefile》</p>
 <p>​        <a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>​        在Makefile中的定义的变量，就像是C/C++语言中的宏一样，他代表了一个文本字串，在Makefile中执行的时候其会自动原模原样地展开在所使用的地方。其与C/C++所不同的是，你可以在Makefile中改变其值。在Makefile中，变量可以使用在“目标”，“依赖目标”，“命令”或是Makefile的其它部分中。</p>
 <p>​        变量的命名字可以包含字符、数字，下划线（可以是数字开头），但不应该含有“:”、“#”、“=”或是空字符（空格、回车等）。变量是大小写敏感的，“foo”、“Foo”和“FOO”是三个不同的变量名。传统的Makefile的变量名是全大写的命名方式，但我推荐使用大小写搭配的变量名，如：MakeFlags。这样可以避免和系统的变量冲突，而发生意外的事情。</p>
@@ -527,40 +1044,147 @@
 <p>同样，模式变量的语法和“目标变量”一样：</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pattern ...&gt;; : &lt;variable-assignment&gt;;</span><br><span class="line">&lt;pattern ...&gt;; : <span class="keyword">override</span> &lt;variable-assignment&gt;;</span><br></pre></td></tr></table></figure>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/Makefile入门4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/21/Makefile入门4/">Makefile入门4</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-21T15:24:55.000Z" itemprop="datePublished">2019-08-21</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/21/Makefile入门4/" itemprop="url">Makefile入门4</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T23:24:55+08:00">
+                2019-08-21
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="Makefile命令"><a href="#Makefile命令" class="headerlink" title="Makefile命令"></a><strong>Makefile命令</strong></h1><p>​        转自《跟我一起写Makefile》</p>
+          
+            <h1 id="Makefile命令"><a href="#Makefile命令" class="headerlink" title="Makefile命令"></a><strong>Makefile命令</strong></h1><p>​        转自《跟我一起写Makefile》</p>
 <p>​        <a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>​        每条规则中的命令和操作系统Shell的命令行是一致的。make会一按顺序一条一条的执行命令，每条命令的开头必须以[Tab]键开头，除非，命令是紧跟在依赖规则后面的分号后的。在命令行之间中的空格或是空行会被忽略，但是如果该空格或空行是以Tab键开头的，那么make会认为其是一个空命令。</p>
 <p>一、显示命令</p>
@@ -602,40 +1226,147 @@
 <p>要使用这个命令包，我们就好像使用变量一样。在这个命令包的使用中，命令包“run-yacc”中的“$^”就是“foo.y”，“$@”就是“foo.c”，make在执行命令包时，命令包中的每个命令会被依次独立执行。</p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo.c : foo.y</span><br><span class="line">	$(run-yacc)</span><br></pre></td></tr></table></figure>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/21/Makefile入门3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/21/Makefile入门3/">Makefile入门3</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-21T14:04:15.000Z" itemprop="datePublished">2019-08-21</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/21/Makefile入门3/" itemprop="url">Makefile入门3</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-21T22:04:15+08:00">
+                2019-08-21
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="Makefile规则和多目标"><a href="#Makefile规则和多目标" class="headerlink" title="Makefile规则和多目标"></a><strong>Makefile规则和多目标</strong></h1><p>转自《跟我一起写Makefile》</p>
+          
+            <h1 id="Makefile规则和多目标"><a href="#Makefile规则和多目标" class="headerlink" title="Makefile规则和多目标"></a><strong>Makefile规则和多目标</strong></h1><p>转自《跟我一起写Makefile》</p>
 <p><a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>一、Makefile书写规则</p>
 <p>规则包含两个部分，一个是依赖关系，一个是生成目标的方法。</p>
@@ -660,7 +1391,7 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VPATH = src:../headers</span><br></pre></td></tr></table></figure>
 <p>上面的的定义指定两个目录，“src”和“../headers”，make会按照这个顺序进行搜索。目录由“冒号”分隔。（当前目录在最高优先级）</p>
 <p>​    2). 另一个设置文件搜索路径的方法是使用make的“vpath”关键字（全小写，make关键字，和VPATH类似，但更灵活），它可以指定不同的文件在不同的搜索目录中。使用方法有三种：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、vpath &lt;pattern&gt;; &lt;directories&gt;;</span><br><span class="line"></span><br><span class="line">为符合模式&lt;pattern&gt;;的文件指定搜索目录&lt;directories&gt;;。</span><br><span class="line"></span><br><span class="line">2、vpath &lt;pattern&gt;;</span><br><span class="line"></span><br><span class="line">清除符合模式&lt;pattern&gt;;的文件的搜索目录。</span><br><span class="line"></span><br><span class="line">3、vpath</span><br><span class="line"></span><br><span class="line">清除所有已被设置好了的文件搜索目录。</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、vpath <span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>; <span class="xml"><span class="tag">&lt;<span class="name">directories</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">为符合模式<span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>;的文件指定搜索目录<span class="xml"><span class="tag">&lt;<span class="name">directories</span>&gt;</span></span>;。</span><br><span class="line"></span><br><span class="line">2、vpath <span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">清除符合模式<span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>;的文件的搜索目录。</span><br><span class="line"></span><br><span class="line">3、vpath</span><br><span class="line"></span><br><span class="line">清除所有已被设置好了的文件搜索目录。</span><br></pre></td></tr></table></figure>
 <p>vapth使用方法中的<pattern>;需要包含“%”字符。“%”的意思是匹配零或若干字符，例如，“%.h”表示所有以“.h”结尾的文件。<pattern>;指定了要搜索的文件集，而<directories>;则指定了<pattern>;的文件集的搜索的目录。例如：</pattern></directories></pattern></pattern></p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vpath</span> %.h ../headers</span><br><span class="line"><span class="comment"># 要求make在“../headers”目录下搜索所有以“.h”结尾的文件。（如果某文件在当前目录没有找到的话）</span></span><br></pre></td></tr></table></figure>
 <p>可以连续地使用vpath语句，以指定不同搜索策略。如果连续的vpath语句中出现了相同的<pattern>;，或是被重复了的<pattern>;，那么，make会按照vpath语句的先后顺序来执行搜索。如：</pattern></pattern></p>
@@ -706,40 +1437,147 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sources = foo.c bar.c</span><br><span class="line"><span class="keyword">include</span> $(sources:.c=.d)</span><br></pre></td></tr></table></figure>
 <p>上述语句中的“\$(sources:.c=.d)”中的“.c=.d”的意思是做一个替换，把变量$(sources)所有[.c]的字串都替换成[.d]。因为include是按次来载入文件，最先载入的[.d]文件中的目标会成为默认目标。</p>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/Makefile入门2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/20/Makefile入门2/">Makefile入门2</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-20T07:10:45.000Z" itemprop="datePublished">2019-08-20</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/20/Makefile入门2/" itemprop="url">Makefile入门2</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T15:10:45+08:00">
+                2019-08-20
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="Makefile基础"><a href="#Makefile基础" class="headerlink" title="Makefile基础"></a><strong>Makefile基础</strong></h1><p>转自《跟我一起写Makefile》</p>
+          
+            <h1 id="Makefile基础"><a href="#Makefile基础" class="headerlink" title="Makefile基础"></a><strong>Makefile基础</strong></h1><p>转自《跟我一起写Makefile》</p>
 <p><a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>一、Makefile基础</p>
 <p>Makefile里主要包含了五个东西：显式规则、隐晦规则、变量定义、文件指示和注释。</p>
@@ -768,40 +1606,147 @@
 <p>GNU的make工作时的执行步骤入下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">stage1:</span><br><span class="line">1、读入所有的Makefile。</span><br><span class="line">2、读入被include的其它Makefile。</span><br><span class="line">3、初始化文件中的变量。</span><br><span class="line">4、推导隐晦规则，并分析所有规则。</span><br><span class="line">5、为所有的目标文件创建依赖关系链。</span><br><span class="line">stage2:</span><br><span class="line">6、根据依赖关系，决定哪些目标要重新生成。</span><br><span class="line">7、执行生成命令。</span><br></pre></td></tr></table></figure>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/20/Makefile入门1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/20/Makefile入门1/">Makefile入门1</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-20T02:17:56.000Z" itemprop="datePublished">2019-08-20</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/20/Makefile入门1/" itemprop="url">Makefile入门1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-20T10:17:56+08:00">
+                2019-08-20
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/Makefile/">Makefile</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C语言/" itemprop="url" rel="index">
+                    <span itemprop="name">C语言</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <h1 id="Makefile简介"><a href="#Makefile简介" class="headerlink" title="Makefile简介"></a><strong>Makefile简介</strong></h1><p>转自《跟我一起写Makefile》</p>
+          
+            <h1 id="Makefile简介"><a href="#Makefile简介" class="headerlink" title="Makefile简介"></a><strong>Makefile简介</strong></h1><p>转自《跟我一起写Makefile》</p>
 <p><a href="https://seisman.github.io/how-to-write-makefile/index.html" target="_blank" rel="noopener">https://seisman.github.io/how-to-write-makefile/index.html</a></p>
 <p>一、前言</p>
 <p>Makefile是和make（解释makefile中指令的工具）命令一起配合使用的，关系到整个工程的编译规则。Makefile定义了一系列的规则来指定，哪些文件需要先编译，哪些文件需要后编译，哪些文件需要重新编译等等。</p>
@@ -837,40 +1782,147 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.PHONY : clean</span><br><span class="line">       clean :</span><br><span class="line">               -rm edit <span class="variable">$(objects)</span></span><br></pre></td></tr></table></figure>
 <p>每个Makefile中都应该写一个清空目标文件（.o和执行文件）的规则，这不仅便于重编译，也很利于保持文件的清洁。clean的规则不要放在文件的开头，不然，这就会变成make的默认目标，不成文的规矩是——“clean从来都是放在文件的最后”。</p>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/15/Shell脚本编程6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/15/Shell脚本编程6/">Shell脚本编程6</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-15T02:20:36.000Z" itemprop="datePublished">2019-08-15</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/15/Shell脚本编程6/" itemprop="url">Shell脚本编程6</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-15T10:20:36+08:00">
+                2019-08-15
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/shell教程/">shell教程</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Shell/" itemprop="url" rel="index">
+                    <span itemprop="name">Shell</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
         
-        <p>摘自《菜鸟教程》–<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-shell.html</a></p>
+          
+            <p>摘自《菜鸟教程》–<a href="https://www.runoob.com/linux/linux-shell.html" target="_blank" rel="noopener">https://www.runoob.com/linux/linux-shell.html</a></p>
 <p>1、  ./脚本名，子进程中运行脚本；</p>
 <p>​        source 脚本名或. ./脚本名，本进程中运行脚本；</p>
 <p>2、sh (Bourne shell)，最初使用，在shell编程方面优秀，但在用户交互方面欠缺；</p>
@@ -909,104 +1961,496 @@
 <p>c.定义别名，先alias -p看一下，不要定义重复，然后定义别名alias run=”sh run”，完成；</p>
 <p>​    </p>
 
+          
         
-    </section>
-</article>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
-    <article class="article" itemscope itemprop="blogPost">
     
-    <header class="article-header">
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/14/IOS-ncnn使用1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Hey Z">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/微信头像.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hey Blog">
+    </span>
+
+    
+      <header class="post-header">
+
         
-        <h1 itemprop="name">
-            <a href="/2019/08/14/IOS-ncnn使用1/">IOS-ncnn使用1</a>
-        </h1>
         
-        <div class="article-meta clearfix">
-            <a class="article-date" href="http://yoursite.com/index.html">
-    
-    <i class="icon-calendar"></i>
-    
-    <time datetime="2019-08-14T01:42:57.000Z" itemprop="datePublished">2019-08-14</time>
-</a>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/08/14/IOS-ncnn使用1/" itemprop="url">IOS-ncnn使用1</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-14T09:42:57+08:00">
+                2019-08-14
+              </time>
+            
 
             
-<div class="article-tag-list">
-    <i class="icon-tag"></i>
-    <a class="article-tag-link" href="/tags/ncnn/">ncnn</a>
-</div>
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/IOS/" itemprop="url" rel="index">
+                    <span itemprop="name">IOS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
 
         </div>
-    </header>
+      </header>
     
-    <section class="article-body markdown-body">
-        
-        <p>一、ncnn入门</p>
-
-        
-    </section>
-</article>
-
-
-
-
-<nav class="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
-</nav>
-
-
-</div>
-        <footer class="footer">
-    Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>, Theme by <a href="https://github.com/sanonz/hexo-theme-concise" target="_blank">Concise</a>
 
     
-</footer>
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
+      
+      
+
+      
+        
+          
+            <p>一、ncnn入门</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/微信头像.jpg" alt="Hey Z">
+            
+              <p class="site-author-name" itemprop="name">Hey Z</p>
+              <p class="site-description motion-element" itemprop="description">LIFE WAS LIKE A BOX OF CHOCOLATES</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Hey-Z" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-globe"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://weibo.com/zhvhe" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-globe"></i>微博</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
     </main>
 
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.9.0/jquery.min.js"></script>
-    <script type="text/javascript">
-    $(function() {
-        var nodes = {
-            nav: $('#nav'),
-            aside: $('#aside'),
-            asideInner: $('#aside-inner'),
-            navInner: $('#nav-inner')
-        };
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Hey Z</span>
 
-        var doing = false;
-        nodes.asideInner.on('webkitAnimationEnd mozAnimationEnd oAnimationEnd oanimationend animationend', function() {
-            if (nodes.aside.hasClass('mobile-open')) {
-                nodes.aside.removeClass('mobile-open');
-            } else {
-                nodes.aside.removeClass('mobile-close panel-show');
-            }
-            doing = false;
-        });
-        $('#open-panel, #aside-mask').on('click', function() {
-            if (doing) {
-                return;
-            }
-            
-            if (nodes.aside.hasClass('panel-show')) {
-                nodes.aside.addClass('mobile-close');
-            } else {
-                nodes.aside.addClass('mobile-open panel-show');
-            }
-        });
-        $('#open-menus').on('click', function() {
-            nodes.navInner.slideToggle();
-        });
+  
+</div>
 
-        if (window.innerWidth <= 960) {
-            setTimeout(function() {
-                nodes.navInner.slideUp();
-            }, 3000);
-        }
-    });
-    </script>
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
     
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
 
 </body>
 </html>
