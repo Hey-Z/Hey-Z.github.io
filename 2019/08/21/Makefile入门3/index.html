@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Makefile,">
+  <meta name="keywords" content="Makefile规则,">
 
 
 
@@ -80,14 +80,14 @@
 
 
 <meta name="description" content="Makefile规则和多目标转自《跟我一起写Makefile》 https://seisman.github.io/how-to-write-makefile/index.html 一、Makefile书写规则 规则包含两个部分，一个是依赖关系，一个是生成目标的方法。 在Makefile中，规则的顺序是很重要的，因为，Makefile中只应该有一个最终目标，其它的目标都是被这个目标所连带出来的，所">
-<meta name="keywords" content="Makefile">
+<meta name="keywords" content="Makefile规则">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Makefile入门3">
 <meta property="og:url" content="http://yoursite.com/2019/08/21/Makefile入门3/index.html">
 <meta property="og:site_name" content="Hey Blog">
 <meta property="og:description" content="Makefile规则和多目标转自《跟我一起写Makefile》 https://seisman.github.io/how-to-write-makefile/index.html 一、Makefile书写规则 规则包含两个部分，一个是依赖关系，一个是生成目标的方法。 在Makefile中，规则的顺序是很重要的，因为，Makefile中只应该有一个最终目标，其它的目标都是被这个目标所连带出来的，所">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-08-24T16:25:36.193Z">
+<meta property="og:updated_time" content="2019-08-24T16:29:16.890Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Makefile入门3">
 <meta name="twitter:description" content="Makefile规则和多目标转自《跟我一起写Makefile》 https://seisman.github.io/how-to-write-makefile/index.html 一、Makefile书写规则 规则包含两个部分，一个是依赖关系，一个是生成目标的方法。 在Makefile中，规则的顺序是很重要的，因为，Makefile中只应该有一个最终目标，其它的目标都是被这个目标所连带出来的，所">
@@ -367,7 +367,7 @@
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">VPATH = src:../headers</span><br></pre></td></tr></table></figure>
 <p>上面的的定义指定两个目录，“src”和“../headers”，make会按照这个顺序进行搜索。目录由“冒号”分隔。（当前目录在最高优先级）</p>
 <p>​    2). 另一个设置文件搜索路径的方法是使用make的“vpath”关键字（全小写，make关键字，和VPATH类似，但更灵活），它可以指定不同的文件在不同的搜索目录中。使用方法有三种：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、vpath <span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>; <span class="xml"><span class="tag">&lt;<span class="name">directories</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">为符合模式<span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>;的文件指定搜索目录<span class="xml"><span class="tag">&lt;<span class="name">directories</span>&gt;</span></span>;。</span><br><span class="line"></span><br><span class="line">2、vpath <span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>;</span><br><span class="line"></span><br><span class="line">清除符合模式<span class="xml"><span class="tag">&lt;<span class="name">pattern</span>&gt;</span></span>;的文件的搜索目录。</span><br><span class="line"></span><br><span class="line">3、vpath</span><br><span class="line"></span><br><span class="line">清除所有已被设置好了的文件搜索目录。</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1、vpath &lt;pattern&gt;; &lt;directories&gt;;</span><br><span class="line"></span><br><span class="line">为符合模式&lt;pattern&gt;;的文件指定搜索目录&lt;directories&gt;;。</span><br><span class="line"></span><br><span class="line">2、vpath &lt;pattern&gt;;</span><br><span class="line"></span><br><span class="line">清除符合模式&lt;pattern&gt;;的文件的搜索目录。</span><br><span class="line"></span><br><span class="line">3、vpath</span><br><span class="line"></span><br><span class="line">清除所有已被设置好了的文件搜索目录。</span><br></pre></td></tr></table></figure>
 <p>vapth使用方法中的<pattern>;需要包含“%”字符。“%”的意思是匹配零或若干字符，例如，“%.h”表示所有以“.h”结尾的文件。<pattern>;指定了要搜索的文件集，而<directories>;则指定了<pattern>;的文件集的搜索的目录。例如：</pattern></directories></pattern></pattern></p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vpath</span> %.h ../headers</span><br><span class="line"><span class="comment"># 要求make在“../headers”目录下搜索所有以“.h”结尾的文件。（如果某文件在当前目录没有找到的话）</span></span><br></pre></td></tr></table></figure>
 <p>可以连续地使用vpath语句，以指定不同搜索策略。如果连续的vpath语句中出现了相同的<pattern>;，或是被重复了的<pattern>;，那么，make会按照vpath语句的先后顺序来执行搜索。如：</pattern></pattern></p>
@@ -429,7 +429,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Makefile/" rel="tag"># Makefile</a>
+            <a href="/tags/Makefile规则/" rel="tag"># Makefile规则</a>
           
         </div>
       
@@ -555,7 +555,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
